@@ -34,3 +34,13 @@ As a single page app implemented with [Flask](https://flask.palletsprojects.com/
    
    > HTML output...
    
+
+3. Start docker container with nginx 
+  add text here...
+   
+4. Build for production
+    ```sh
+    cd client    
+    npm run build
+    ```
+
