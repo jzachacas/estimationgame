@@ -47,7 +47,6 @@ def hello():
     return jsonify("Total visits: {}".format(session.get('visits')))
 
 
-# sanity check route
 @app.route('/api/ping', methods=['GET'])
 def ping_pong():
     return jsonify('pong!')
@@ -74,10 +73,13 @@ def get_story():
 
 @app.route('/api/votes/<user_id>', methods=['POST'])
 def do_vote(user_id):
+    if all_users_have_voted():
+        return jsonify("too late"), 418
+
     post_data = request.get_json()
     vote = post_data.get("vote")
     if vote not in VOTE_OPTIONS:
-        return jsonify(f"Value {vote} not in allowed value range")
+        return jsonify(f"Value {vote} not in allowed options")
     VOTES[user_id] = vote
     USERS[user_id]["has_voted"] = True
     socketio.emit('userVoted', {'User voted': user_id}, broadcast=True)

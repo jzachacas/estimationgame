@@ -33,8 +33,11 @@ export default {
     };
   },
   components: {},
-  sockets: {},
-  methods: {
+  sockets: {
+    votesCleared() {
+      this.myVote = '';
+    },
+  },  methods: {
     getVoteOptions() {
       const path = 'http://localhost:8000/api/vote_options';
       axios.get(path)
