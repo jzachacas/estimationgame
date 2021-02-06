@@ -38,9 +38,9 @@
 
 <script>
 import axios from 'axios';
-import {API_LOCATION} from "@/config"
+import { API_LOCATION } from '@/config';
 
-import Alert from '@/components/Alert';
+import Alert from '@/components/Alert.vue';
 
 export default {
   data() {
@@ -73,7 +73,7 @@ export default {
     updateUserVotesDisplay() {
       let numVotes = 0;
       for (let i = 0; i < this.users.length; ++i) {
-        if (this.users[i]['has_voted']) {
+        if (this.users[i].has_voted) {
           ++numVotes;
         }
       }

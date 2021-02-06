@@ -9,7 +9,7 @@
 
 <script>
 import axios from 'axios';
-import { API_LOCATION } from "@/config"
+import { API_LOCATION } from '@/config';
 
 export default {
   name: 'Login',
@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     doLogin() {
-      const path = API_LOCATION + '/login';
+      const path = `${API_LOCATION}/login`;
       axios.post(path, {
         username: this.username,
       })

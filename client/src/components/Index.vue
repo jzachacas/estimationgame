@@ -16,7 +16,7 @@
 
 <script>
 import axios from 'axios';
-import { API_LOCATION } from "@/config"
+import { API_LOCATION } from '@/config';
 
 import Users from './Users.vue';
 import Story from './Story.vue';

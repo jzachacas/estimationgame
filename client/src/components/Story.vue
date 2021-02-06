@@ -47,7 +47,7 @@
 
 <script>
 import axios from 'axios';
-import {API_LOCATION} from "@/config";
+import { API_LOCATION } from '@/config';
 
 export default {
   data() {

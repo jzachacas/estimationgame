@@ -24,7 +24,7 @@
 
 <script>
 import axios from 'axios';
-import {API_LOCATION} from "@/config";
+import { API_LOCATION } from '@/config';
 
 export default {
   data() {
@@ -38,7 +38,8 @@ export default {
     votesCleared() {
       this.myVote = '';
     },
-  },  methods: {
+  },
+  methods: {
     getVoteOptions() {
       const path = `${API_LOCATION}/vote_options`;
 
@@ -54,7 +55,7 @@ export default {
       console.info(`voting ${vote}`);
       const path = `${API_LOCATION}/votes/${localStorage.username}`;
 
-      axios.post(path, {vote})
+      axios.post(path, { vote })
         .then((res) => {
           if (res.status === 200) {
             this.myVote = vote;
@@ -65,9 +66,9 @@ export default {
         });
     },
     getVoteButtons() {
-      let result = [];
+      const result = [];
       for (let i = 0; i < this.voteOptions.length; ++i) {
-        result.push({value: this.voteOptions[i], isSelected: this.voteOptions[i] === this.myVote});
+        result.push({ value: this.voteOptions[i], isSelected: this.voteOptions[i] === this.myVote });
       }
       return result;
     },

@@ -7,12 +7,14 @@ module.exports = {
     public: 'localhost:8000',
     disableHostCheck: true,
   },
-  chainWebpack: config => {
+  chainWebpack: (config) => {
     config
       .plugin('html')
-      .tap(args => {
-        args[0].title = "Q&D Estimation Game";
+      .tap((args) => {
+        // https://cli.vuejs.org/guide/webpack.html#modifying-options-of-a-plugin
+        // eslint-disable-next-line no-param-reassign
+        args[0].title = 'Q&D Estimation Game';
         return args;
-      })
+      });
   }
 };
