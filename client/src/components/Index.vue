@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col-sm-10">
-        <h1>Q&D Estimation</h1>
+        <h1>Q&D Estimation Game</h1>
         <Story/>
         <Users/>
         <VoteOptions/>

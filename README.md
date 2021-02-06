@@ -43,4 +43,7 @@ As a single page app implemented with [Flask](https://flask.palletsprojects.com/
     cd client    
     npm run build
     ```
-
+5. Run like in production:
+```
+docker build . -t flask_hello && docker run --name flask_container -p 80:80 flask_hello
+```

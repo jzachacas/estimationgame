@@ -6,6 +6,7 @@ import VueSocketIO from 'vue-socket.io';
 import App from './App.vue';
 import router from './router';
 import 'bootstrap/dist/css/bootstrap.css';
+import {WS_LOCATION} from "@/config";
 
 if (localStorage.username === undefined && !window.location.href.endsWith('/login')) {
   window.location.replace('/login');
@@ -13,7 +14,7 @@ if (localStorage.username === undefined && !window.location.href.endsWith('/logi
 
 Vue.use(BootstrapVue);
 
-const socket = socketio('http://localhost:80/', { path: '/prefix/socket.io' });
+const socket = socketio(WS_LOCATION, {path: '/prefix/socket.io'});
 
 Vue.use(new VueSocketIO({
   debug: true,
