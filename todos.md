@@ -7,6 +7,7 @@
   - At this point we want 
     - a proper persistence model
     - critically rethink the design decision of using flask 
+    - might be fun to play with [connexion](https://github.com/zalando/connexion), though  
 - [POKER-66] Consider adding tests...
   
 ## Solved
