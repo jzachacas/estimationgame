@@ -18,7 +18,7 @@ COPY client/dist /var/www/html
 COPY nginx.conf /etc/nginx
 
 COPY start.sh /srv/backend
-COPY uwsgi.ini /srv/backend
+#COPY uwsgi.ini /srv/backend
 
 WORKDIR /srv/backend
 
