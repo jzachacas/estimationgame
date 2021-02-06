@@ -13,7 +13,7 @@ if (localStorage.username === undefined && !window.location.href.endsWith('/logi
 
 Vue.use(BootstrapVue);
 
-const socket = socketio('http://localhost:5000/', { path: '/prefix/socket.io' });
+const socket = socketio('http://localhost:80/', { path: '/prefix/socket.io' });
 
 Vue.use(new VueSocketIO({
   debug: true,

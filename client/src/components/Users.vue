@@ -24,7 +24,9 @@
               </span>
               <span v-else>Pending</span>
             </td>
-            <td><button type="button" class="btn" @click="deleteUser(user)">Delete User</button></td>
+            <td>
+              <button type="button" class="btn" @click="deleteUser(user)">Delete User</button>
+            </td>
           </tr>
           </tbody>
         </table>
@@ -36,6 +38,8 @@
 
 <script>
 import axios from 'axios';
+import {API_LOCATION} from "@/config"
+
 import Alert from '@/components/Alert';
 
 export default {
@@ -77,7 +81,7 @@ export default {
       this.showMessage = true;
     },
     getUsers() {
-      const path = 'http://localhost:8000/api/users';
+      const path = `${API_LOCATION}/users`;
       axios.get(path)
         .then((res) => {
           this.users = res.data.users;
@@ -89,7 +93,7 @@ export default {
     },
     clearCurrentVotes() {
       console.info('clearing votes');
-      const path = 'http://localhost:8000/api/votes/';
+      const path = `${API_LOCATION}/votes`;
       axios.delete(path)
         .then(() => {
           this.getUsers();
@@ -100,7 +104,8 @@ export default {
     },
     deleteUser(user) {
       console.info(`deleting ${user.username}`);
-      const path = `http://localhost:8000/api/users/${user.username}`;
+      const path = `${API_LOCATION}/users/${user.username}`;
+
       axios.delete(path)
         .then(() => {
           this.getUsers();

@@ -24,6 +24,7 @@
 
 <script>
 import axios from 'axios';
+import {API_LOCATION} from "@/config";
 
 export default {
   data() {
@@ -39,7 +40,8 @@ export default {
     },
   },  methods: {
     getVoteOptions() {
-      const path = 'http://localhost:8000/api/vote_options';
+      const path = `${API_LOCATION}/vote_options`;
+
       axios.get(path)
         .then((res) => {
           this.voteOptions = res.data;
@@ -50,7 +52,8 @@ export default {
     },
     doVote(vote) {
       console.info(`voting ${vote}`);
-      const path = `http://localhost:8000/api/votes/${localStorage.username}`;
+      const path = `${API_LOCATION}/votes/${localStorage.username}`;
+
       axios.post(path, {vote})
         .then((res) => {
           if (res.status === 200) {
