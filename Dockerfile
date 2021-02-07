@@ -12,13 +12,10 @@ WORKDIR /srv/backend
 RUN pip install -r requirements.txt --src /usr/local/src
 
 COPY ./backend /srv/backend
-
 COPY client/dist /var/www/html
-
 COPY nginx.conf /etc/nginx
-
 COPY start.sh /srv/backend
-#COPY uwsgi.ini /srv/backend
+RUN install -d /var/log/gunicorn
 
 WORKDIR /srv/backend
 

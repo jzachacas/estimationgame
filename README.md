@@ -45,10 +45,16 @@ nginx docker container can be used.
     npm run build
     ``` 
 
-5. Run like in production:
+## Run like in production:
 ```
 docker build . -t estimationgame && docker run --name estimationgame -p 80:80 estimationgame
 ```
+
+### Log files
+  Stdout and log from python gets into `/var/log/gunicorn/error.log`.
+  Note that output before execution of `socketio.run` seems to get swallowed.
+  Access log is visible in `/var/log/gunicorn/access.log` and on stdout. 
+
 
 3. *Obsolete:* Proxying is done by vue-cli now (but this may be helpful for debugging).
    

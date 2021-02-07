@@ -1,15 +1,14 @@
 # Todos
 
 ## Open
-- [POKER-8] Setup Logging properly in Docker container
-   - Not sure where the server output goes to currently.
 - [POKER-3] Add Basic server persistence
   - Pickles should be enough.
 - [POKER-2] Make a list of stories available
   - At this point we want 
     - a proper persistence model
     - critically rethink the design decision of using flask 
-    - might be fun to play with [connexion](https://github.com/zalando/connexion), though  
+    - might be fun to play with [connexion](https://github.com/zalando/connexion), though
+- [POKER-9] Configure proper logger class in python  
 - [POKER-66] Consider adding tests...
 - [POKER-100] Upgrade to vue.js 3.
   
@@ -27,3 +26,6 @@
 - [POKER-6] Add feature to remove users
 - [POKER-7] Add nginx-setup.
   This might solve the session issues.
+- [POKER-8] Setup Logging properly in Docker container
+  - Not sure where the server output goes to currently.
+  

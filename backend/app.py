@@ -170,5 +170,4 @@ def ping(message):
 
 if __name__ == '__main__':
     app.secret_key = "123"
-    print("so weit xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx")
     socketio.run(app, host="0.0.0.0")
