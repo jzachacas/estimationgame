@@ -41,7 +41,6 @@ def index_with_prefix():
     return jsonify("backend server up and running with prefix")
 
 
-@app.route('/api/hello', methods=['GET'])
 def hello():
     if 'visits' in session:
         session['visits'] = session.get('visits') + 1
@@ -50,13 +49,11 @@ def hello():
     return jsonify("Total visits: {}".format(session.get('visits')))
 
 
-@app.route('/api/ping', methods=['GET'])
 def ping_pong():
     return jsonify('pong!')
 
 
-@app.route('/api/story/', methods=['PUT'])
-def add_story():
+def put_story():
     post_data = request.get_json()
     print(f"story: {post_data}")
     if "title" in post_data.keys():
@@ -69,7 +66,6 @@ def add_story():
     return jsonify('story ok!')
 
 
-@app.route('/api/story/', methods=['GET'])
 def get_story():
     return jsonify(STORY)
 

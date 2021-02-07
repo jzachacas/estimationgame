@@ -9,12 +9,60 @@ consumes:
 produces:
   - application/json
 
+
+
+
 paths:
+  /ping:
+    get:
+      operationId: app.ping_pong
+      summary: Do a ping, get a pong
+      responses:
+        200:
+          description: Pong
+          schema:
+            type: string
+            example: "Pong"
+  /hello:
+    get:
+      operationId: app.hello
+      summary: Like a ping but with attached session
+      responses:
+        200:
+          description: Pong
+          schema:
+            type: string
+            example: "Total visits: 42"
   /story:
     get:
       tags: [ Story ]
       operationId: app.get_story
       summary: Get the story
+      responses:
+        200:
+          description: Return the story that is to be estimated
+          schema:
+            type: object
+            $ref: '#/definitions/Story'
+    put:
+      tags: [ Story ]
+      operationId: app.put_story
+      summary: Modify the story
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: story
+          description: The story to update.
+          schema:
+            type: object
+            properties:
+              title:
+                type: string
+                example: "[BACKEND-42] Develop new feature"
+              description:
+                type: string
+                example: "Because the customer is in desperate need"
       responses:
         200:
           description: Return the story that is to be estimated

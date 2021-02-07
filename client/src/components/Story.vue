@@ -72,7 +72,7 @@ export default {
   },
   methods: {
     updateStory(payload) {
-      const path = `${API_LOCATION}/story/`;
+      const path = `${API_LOCATION}/story`;
       axios.put(path, payload)
         .then(() => {
           this.getStory();
@@ -96,7 +96,7 @@ export default {
     onResetUpdate() {
     },
     getStory() {
-      const path = `${API_LOCATION}/story/`;
+      const path = `${API_LOCATION}/story`;
       axios.get(path)
         .then((res) => {
           this.story = res.data;
