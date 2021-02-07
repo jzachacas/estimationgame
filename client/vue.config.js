@@ -4,6 +4,10 @@ module.exports = {
       warnings: true,
       errors: true,
     },
+    // The value of 'public' be seen as the 'Network' entry in console output:
+    //   App running at:
+    //   - Local:   http://localhost:8080/
+    //   - Network: http://localhost:8000/
     public: 'localhost:8000',
     disableHostCheck: true,
   },

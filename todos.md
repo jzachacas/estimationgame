@@ -1,6 +1,8 @@
 # Todos
 
 ## Open
+- [POKER-8] Setup Logging properly in Docker container
+   - Not sure where the server output goes to currently.
 - [POKER-3] Add Basic server persistence
   - Pickles should be enough.
 - [POKER-2] Make a list of stories available

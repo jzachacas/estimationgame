@@ -18,5 +18,5 @@ rules:
   "no-console": 0
   "no-plusplus": 0
   "max-len": 0
-
+  "no-multiple-empty-lines": 0
 

@@ -8,7 +8,7 @@ and starting flask in debug mode). To make sessions work across
 domains (different ports equal different domains), a local
 nginx docker container can be used. 
 
-1. Run the Flask backend in folder [server](./server/):
+1. Run the Flask backend in folder [backend](./backend):
 
     ```sh    
     cd server
@@ -22,9 +22,9 @@ nginx docker container can be used.
     ```
    curl http://localhost:5000/
     ```
-   > "server up and running"
+   > "backend server up and running"
    
-2. Run the Vue.js client in folder [client](./client/):
+2. Run the Vue.js client in folder [client](./client):
 
     ```sh
     cd client
@@ -40,14 +40,24 @@ nginx docker container can be used.
    > HTML output...
    
 
-3. Start docker container with nginx 
-  add text here...
-   
+3. Start the development docker container with nginx as reverse proxy 
+  ```
+  cd docker
+  docker-compose up
+  ```
+
+  Test availability:
+   ```
+   xdg-open http://localhost:8000/
+   ```
+
 4. Build for production
     ```sh
     cd client    
     npm run build
     ```
+   Calls should now be forwarded to the running backend and client servers.
+
 5. Run like in production:
 ```
 docker build . -t flask_hello && docker run --name flask_container -p 80:80 flask_hello

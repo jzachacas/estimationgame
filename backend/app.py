@@ -30,12 +30,12 @@ def all_users_have_voted():
 
 @app.route('/', methods=['GET'])
 def index():
-    return jsonify("server up and running")
+    return jsonify("backend server up and running")
 
 
 @app.route('/api', methods=['GET'])
 def index_with_prefix():
-    return jsonify("server up and running with prefix")
+    return jsonify("backend server up and running with prefix")
 
 
 @app.route('/api/hello', methods=['GET'])
