@@ -1,8 +1,18 @@
 <template>
   <div class="container">
-    <label for="username"/>
-    <input id="username" v-model="username" placeholder="edit me">
-    <p>Username: {{ username }}</p>
+    <b-form v-on:submit.prevent="doLogin" class="w-100">
+      <b-form-group id="form-title-edit-group"
+                    label="Please enter your Name:"
+                    label-for="form-title-edit-input">
+        <b-form-input id="form-title-edit-input"
+                      type="text"
+                      v-model="username"
+                      value="lorem"
+                      required
+                      placeholder="Enter your name here">
+        </b-form-input>
+      </b-form-group>
+    </b-form>
     <button type="button" class="btn btn-primary" @click="doLogin()">Login</button>
   </div>
 </template>
@@ -15,7 +25,7 @@ export default {
   name: 'Login',
   data() {
     return {
-      username: '',
+      username: localStorage.lastUsername,
     };
   },
   methods: {
@@ -28,6 +38,7 @@ export default {
           if (res.status === 200) {
             console.info(`login successful ${res.data.username}`);
             localStorage.setItem('username', res.data.username);
+            localStorage.setItem('lastUsername', res.data.username);
             this.$router.push('/');
           }
         })
