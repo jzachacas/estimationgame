@@ -1,4 +1,6 @@
-# client
+# The Frontend Part
+
+Using npm and [vue.js](https://vuejs.org/).
 
 ## Project setup
 ```

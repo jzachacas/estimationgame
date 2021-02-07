@@ -39,29 +39,31 @@ nginx docker container can be used.
    
    > HTML output...
    
-
-3. Start the development docker container with nginx as reverse proxy 
-  ```
-  cd docker
-  docker-compose up
-  ```
-
-  Test availability:
-   ```
-   xdg-open http://localhost:8000/
-   ```
-
 4. Build for production
     ```sh
     cd client    
     npm run build
-    ```
-   Calls should now be forwarded to the running backend and client servers.
+    ``` 
 
 5. Run like in production:
 ```
-docker build . -t flask_hello && docker run --name flask_container -p 80:80 flask_hello
+docker build . -t estimationgame && docker run --name estimationgame -p 80:80 estimationgame
 ```
+
+3. *Obsolete:* Proxying is done by vue-cli now (but this may be helpful for debugging).
+   
+   [nginx.conf](docker/nginx.conf) needs your local IP in line `proxy_pass http://192.168.178.29:8080`
+   Then start the development docker container with nginx as reverse proxy
+     ```
+     cd docker
+     docker-compose up
+     ```
+
+   Test availability:
+      ```
+      xdg-open http://localhost:8000/
+      ```
+   Calls should now be forwarded to the running backend and client servers.
 
 ## Notes
 

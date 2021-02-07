@@ -11,7 +11,12 @@
     - critically rethink the design decision of using flask 
     - might be fun to play with [connexion](https://github.com/zalando/connexion), though  
 - [POKER-66] Consider adding tests...
+- [POKER-100] Upgrade to vue.js 3.
   
+  _Quote:_ "If you are planning to migrate a non-trivial Vue 2 app, we strongly recommend waiting for the Migration Build for a 
+  smoother experience." 2021-07-01
+  https://v3.vuejs.org/guide/migration/introduction.html#quickstart  
+
 ## Solved
 - [POKER-4] Setup js-linter
   Currently almost disabled. Original setting did not allow
