@@ -15,6 +15,7 @@ COPY ./backend /srv/backend
 COPY client/dist /var/www/html
 COPY nginx.conf /etc/nginx
 COPY start.sh /srv/backend
+COPY swagger.yaml /srv/
 RUN install -d /var/log/gunicorn
 
 WORKDIR /srv/backend

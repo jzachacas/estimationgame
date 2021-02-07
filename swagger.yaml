@@ -1,0 +1,42 @@
+swagger: '2.0'
+basePath: /api
+info:
+  title: Estimation Game API
+  version: "0.1"
+  description: Simpe Restful API for the estimation game app
+consumes:
+  - application/json
+produces:
+  - application/json
+
+paths:
+  /story:
+    get:
+      tags: [ Story ]
+      operationId: app.get_story
+      summary: Get the story
+      responses:
+        200:
+          description: Return the story that is to be estimated
+          schema:
+            type: object
+            $ref: '#/definitions/Story'
+
+definitions:
+  Story:
+    type: object
+    required:
+      - title
+      - description
+    properties:
+      title:
+        type: string
+        description: Short title, probably containing ticket number
+        example: "[BACKEND-42] Develop new feature"
+        minLength: 1
+        maxLength: 100
+      description:
+        type: string
+        description: The long story description
+        example: "Because the customer is in desperate need"
+        minLength: 1

@@ -1,4 +1,5 @@
-from flask import Flask, jsonify, request, session
+import connexion
+from flask import jsonify, request, session
 from flask_cors import CORS
 from flask_socketio import SocketIO
 
@@ -14,7 +15,9 @@ VOTES = {
 
 DEBUG = True
 
-app = Flask(__name__)
+connexion_app = connexion.App(__name__)
+
+app = connexion_app.app  # equals to app = Flask(__name__)
 app.config.from_object(__name__)
 
 app.config['SECRET_KEY'] = 'would become a secret in production...'
@@ -168,6 +171,9 @@ def ping(message):
     print('ping event', message)
 
 
+# api must be added after all functions used there have been defined
+connexion_app.add_api('../swagger.yaml')
+
 if __name__ == '__main__':
     app.secret_key = "123"
-    socketio.run(app, host="0.0.0.0")
+    socketio.run(app, host="0.0.0.0", extra_files=["../swagger.yaml"])
