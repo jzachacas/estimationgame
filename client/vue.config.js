@@ -1,16 +1,22 @@
 module.exports = {
+
+  publicPath: '/',
+
   devServer: {
     overlay: {
       warnings: true,
       errors: true,
     },
-    // The value of 'public' be seen as the 'Network' entry in console output:
-    //   App running at:
-    //   - Local:   http://localhost:8080/
-    //   - Network: http://localhost:8000/
-    public: 'localhost:8000',
+    // 'public' corresponds to 'Network' entry in console output
+    public: 'localhost:8080/',
+    publicPath: '/',
+    proxy: {
+      '/api/': {'target': 'http://localhost:5000'} ,
+      '/api-ws/': {'target': 'http://localhost:5000'} ,
+    },
     disableHostCheck: true,
   },
+
   chainWebpack: (config) => {
     config
       .plugin('html')

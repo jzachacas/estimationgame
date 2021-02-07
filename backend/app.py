@@ -19,7 +19,7 @@ app.config.from_object(__name__)
 
 app.config['SECRET_KEY'] = 'would become a secret in production...'
 socketio = SocketIO(app, logger=True, engineio_logger=True, cors_allowed_origins="*",
-                    path="/prefix/socket.io",
+                    path="/api-ws/socket.io",
                     ping_timeout=20, manage_session=True)
 CORS(app, resources={r'/*': {'origins': '*'}})
 
