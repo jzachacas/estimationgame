@@ -19,7 +19,7 @@
             <td>{{ index + 1 }}</td>
             <td>{{ user.username }}</td>
             <td>
-              <span v-if="user['has_voted']">
+              <span v-if="user['hasVoted']">
                 {{ user.vote }}
               </span>
               <span v-else>Pending</span>
@@ -54,6 +54,9 @@ export default {
     alert: Alert,
   },
   sockets: {
+    ping() {
+      console.info('got the ping');
+    },
     userVoted() {
       this.getUsers();
     },
@@ -73,7 +76,7 @@ export default {
     updateUserVotesDisplay() {
       let numVotes = 0;
       for (let i = 0; i < this.users.length; ++i) {
-        if (this.users[i].has_voted) {
+        if (this.users[i].hasVoted) {
           ++numVotes;
         }
       }

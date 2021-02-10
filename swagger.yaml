@@ -9,13 +9,10 @@ consumes:
 produces:
   - application/json
 
-
-
-
 paths:
   /ping:
     get:
-      operationId: app.ping_pong
+      operationId: view.ping_pong
       summary: Do a ping, get a pong
       responses:
         200:
@@ -25,7 +22,7 @@ paths:
             example: "Pong"
   /hello:
     get:
-      operationId: app.hello
+      operationId: view.hello
       summary: Like a ping but with attached session
       responses:
         200:
@@ -36,7 +33,7 @@ paths:
   /story:
     get:
       tags: [ Story ]
-      operationId: app.get_story
+      operationId: view.get_story
       summary: Get the story
       responses:
         200:
@@ -46,7 +43,7 @@ paths:
             $ref: '#/definitions/Story'
     put:
       tags: [ Story ]
-      operationId: app.put_story
+      operationId: view.put_story
       summary: Modify the story
       consumes:
         - application/json
@@ -65,10 +62,117 @@ paths:
                 example: "Because the customer is in desperate need"
       responses:
         200:
-          description: Return the story that is to be estimated
+          description: Return the modified story
           schema:
             type: object
             $ref: '#/definitions/Story'
+
+  /users:
+    get:
+      tags: [ User ]
+      operationId: view.get_users
+      summary: Get all users
+      responses:
+        200:
+          description: Return the users
+          schema:
+            type: array
+            items:
+              type: object
+              additionalProperties: true
+  /users/{username}:
+    delete:
+      tags: [ User ]
+      operationId: view.delete_user
+      summary: Delete a user - serves as logout
+      parameters:
+        - in: path
+          name: username
+          type: string
+          required: true
+          description: The username.
+      responses:
+        200:
+          description: A success message
+          schema:
+            type: object
+  /votes/{username}:
+    put:
+      tags: [ Vote ]
+      operationId: view.put_vote
+      summary: Add a vote
+      consumes:
+        - application/json
+      parameters:
+        - in: path
+          name: username
+          type: string
+          required: true
+          description: The username.
+        - in: body
+          name: vote
+          description: The vote of the user to put.
+          schema:
+            type: object
+            properties:
+              vote:
+                type: string
+                example: "20"
+      responses:
+        200:
+          description: A success message
+          schema:
+            type: object
+  /votes:
+    delete:
+      tags: [ Vote ]
+      operationId: view.delete_votes
+      summary: Delete all votes
+      responses:
+        200:
+          description: A success message
+          schema:
+            type: object
+  /vote_options:
+    get:
+      tags: [ User ]
+      operationId: view.get_vote_options
+      summary: Get allowed estimates
+      responses:
+        200:
+          description: Return the possible vote options
+          schema:
+            type: array
+            items:
+              type: string
+  /login:
+    post:
+      tags: [ Login ]
+      operationId: view.post_login
+      summary: User login
+      consumes:
+        - application/json
+      parameters:
+        - in: body
+          name: login
+          description: The request to login.
+          schema:
+            type: object
+            properties:
+              username:
+                type: string
+                example: "Harald"
+
+      responses:
+        200:
+          description: Return a json containing the username
+          schema:
+            type: object
+            properties:
+              username:
+                type: string
+                example: "Harald"
+
 
 definitions:
   Story:
@@ -88,3 +192,7 @@ definitions:
         description: The long story description
         example: "Because the customer is in desperate need"
         minLength: 1
+
+
+
+

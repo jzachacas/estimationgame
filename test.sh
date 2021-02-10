@@ -16,3 +16,5 @@ set -x
 http GET $URL/story
 http PUT $URL/story title="[TICKET-1] Dinge tun" description="Denn sie sind wichtig"
 http GET $URL/story
+
+http GET $URL/users

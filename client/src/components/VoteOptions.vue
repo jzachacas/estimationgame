@@ -55,7 +55,7 @@ export default {
       console.info(`voting ${vote}`);
       const path = `${API_LOCATION}/votes/${localStorage.username}`;
 
-      axios.post(path, { vote })
+      axios.put(path, { vote })
         .then((res) => {
           if (res.status === 200) {
             this.myVote = vote;

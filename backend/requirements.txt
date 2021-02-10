@@ -17,3 +17,5 @@ greenlet==1.0.0
 gunicorn==20.0.4
 httpie==2.4.0
 swagger-ui-bundle==0.0.8
+Flask-SQLAlchemy
+SQLAlchemy

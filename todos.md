@@ -10,6 +10,11 @@
     - might be fun to play with [connexion](https://github.com/zalando/connexion), though
 - [POKER-9] Configure proper logger class in python  
 - [POKER-66] Consider adding tests...
+- [POKER-10] New major version of npm available! 6.14.4 → 7.5.3
+  
+  "Changelog: https://github.com/npm/cli/releases/tag/v7.5.3"
+  "Run npm install -g npm to update!"
+
 - [POKER-100] Upgrade to vue.js 3.
   
   _Quote:_ "If you are planning to migrate a non-trivial Vue 2 app, we strongly recommend waiting for the Migration Build for a 
