@@ -66,7 +66,7 @@ def put_story():
 
     get_socketio().emit('storyModified', broadcast=True)
 
-    return respond_with('updated story')
+    return jsonify({'title': story.title, 'description': story.description})
 
 
 def get_story():
