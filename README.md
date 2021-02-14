@@ -31,9 +31,10 @@ For development, two servers are started:
    FLASK_ENV=development flask run
     ```   
 
-    Test availability:  
-    ```
-   curl http://127.0.0.1:5000/api/ping
+    Test availability:
+   
+    ```sh
+    curl http://127.0.0.1:5000/api/ping
     ```
    > "pong!"
 
@@ -46,9 +47,9 @@ For development, two servers are started:
     ```
  
 3.  Test availability. 
-    ```
+   ```sh 
    curl http://localhost:8080/
-    ``` 
+   ```
    > HTML output...
 
  *Beware:* If port 8080 is already in use, the next free port will be used. It has to be provided in [config.js](client/src/config.js)
