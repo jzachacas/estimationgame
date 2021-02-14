@@ -11,11 +11,14 @@ COPY ./backend/requirements.txt /srv/backend/requirements.txt
 WORKDIR /srv/backend
 RUN pip install -r requirements.txt --src /usr/local/src
 
-COPY ./backend /srv/backend
+COPY ./backend/*.py /srv/backend/
+COPY swagger.yaml /srv/
+RUN python setup.py
+
 COPY client/dist /var/www/html
 COPY nginx.conf /etc/nginx
 COPY start.sh /srv/backend
-COPY swagger.yaml /srv/
+
 RUN install -d /var/log/gunicorn
 
 WORKDIR /srv/backend

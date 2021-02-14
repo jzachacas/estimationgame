@@ -1,13 +1,12 @@
 # Todos
 
 ## Open
-- [POKER-3] Add Basic server persistence
-  - Pickles should be enough.
 - [POKER-2] Make a list of stories available
-  - At this point we want 
-    - a proper persistence model
-    - critically rethink the design decision of using flask 
-    - might be fun to play with [connexion](https://github.com/zalando/connexion), though
+- [POKER-11] Critically rethink the design decision of using flask
+    - Does it actually solve more problems than it creates? Websockets are a constant pain to use.
+- [POKER-13] Use user roles. 
+   - First user becomes admin. Only admin can clear votes and change story. 
+- [POKER-12] Provide CVS export for estimated story
 - [POKER-9] Configure proper logger class in python  
 - [POKER-66] Consider adding tests...
 - [POKER-10] New major version of npm available! 6.14.4 → 7.5.3
@@ -22,6 +21,8 @@
   https://v3.vuejs.org/guide/migration/introduction.html#quickstart  
 
 ## Solved
+- [POKER-3] Add Basic server persistence
+  - A sqlite file stored in the container should be enough. I call the lack of permanent storage a feature. 
 - [POKER-4] Setup js-linter
   Currently almost disabled. Original setting did not allow
   console usage, which was annoying me to much.

@@ -1,3 +1,5 @@
+import sys
+
 import connexion
 from flask_cors import CORS
 from flask_socketio import SocketIO
@@ -38,8 +40,5 @@ def register_blueprints(the_app):
 flask_app, socketio = create_app()
 
 if __name__ == '__main__':
-    with flask_app.app_context():
-        print("setting up database")
-        db.create_all()
-
+    print("starting this app directly has been disabled as websockets do not work with the development server")
     # socketio.run(flask_app, host="0.0.0.0", extra_files=["../swagger.yaml"])

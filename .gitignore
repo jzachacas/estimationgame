@@ -15,3 +15,5 @@ __pycache__
 /server/venv/
 
 /backend/venv/
+/backend/database.sqlite
+/client/cypress/videos/
