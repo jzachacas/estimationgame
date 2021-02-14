@@ -9,6 +9,20 @@
 - [POKER-12] Provide CVS export for estimated story
 - [POKER-9] Configure proper logger class in python  
 - [POKER-66] Consider adding tests...
+- [POKER-14] Fix hot reload
+  Broken since switch to connexion. Current output:
+  ```
+   Environment: development
+  * Debug mode: on
+  * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+  * Restarting with stat
+  * Debugger is active!
+  * Debugger PIN: 130-039-237
+    Server initialized for threading.
+    Server initialized for threading.
+  * Detected change in '[...]/backend/app.py', reloading
+  ```
+  But nothing happens.
 - [POKER-10] New major version of npm available! 6.14.4 → 7.5.3
   
   "Changelog: https://github.com/npm/cli/releases/tag/v7.5.3"
