@@ -1,0 +1,32 @@
+{
+  "Name": "local/estimo",
+  "Version": "0.0.9-0",
+  "DisplayName": "Estimo",
+  "Description": "Scrum Estimation Game",
+  "Logo": "https://cloudogu.com/images/dogus/nginx.png",
+  "Category": "Base",
+  "Tags": [
+    "webserver"
+  ],
+  "Url": "https://localhost/estimo",
+  "Image": "local/estimo",
+  "Dependencies": [
+  ],
+  "Configuration": [
+  ],
+  "HealthChecks": [
+    {
+      "Type": "tcp",
+      "Port": 8080
+    }
+  ],
+  "Properties": {
+    "stopAtBackup": "false"
+  }
+}
+
+
+
+
+
+
