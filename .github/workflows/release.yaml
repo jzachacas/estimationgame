@@ -5,19 +5,17 @@ name: Release
 on:
   workflow_dispatch:
     inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
-        # Default value if no value is explicitly provided
-        default: 'World'
-        # Input has to be provided for the workflow to run
+      version:        
+        description: 'The version tag that is to be released'                        
         required: true
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: ./client
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js
