@@ -10,17 +10,38 @@ on:
         required: true
 
 jobs:
-  build:
-
+  build_release:
+    name: Build Release
     runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./client
     steps:
       - uses: actions/checkout@v2
-      - name: Use Node.js
+      - name: Perform nmp run build
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
-      - run: npm ci
-      - run: npm run build
+      - run: make release      
+      - name: release
+        uses: actions/create-release@v1
+        id: create_release
+        with:
+          draft: false
+          prerelease: true
+          release_name: pre-release
+          tag_name: ${{ github.ref }}          
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Upload Artifact
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./estimo.tar.gz
+          asset_name: estimo.tar.gz
+          asset_content_type: application/gzip          
+          
+          
+          
