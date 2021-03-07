@@ -4,7 +4,7 @@ This software aims to be a minimal but usable poker-like estimation game for Scr
 
 ![screenshot](screenshot.png)
 
-It is implemented as a single page app with [Flask](https://flask.palletsprojects.com/en/1.1.x/) and [Vue.js](https://vuejs.org). Events are propagates to the clients by socket.io.
+The tool is implemented as a single page app with [Flask](https://flask.palletsprojects.com/en/1.1.x/) and [Vue.js](https://vuejs.org). Events are propagated to the clients by socket.io.
 
 **Disclaimer:**
 This software is meant to be run in a protected environment. Issues around authorization and authentication are not being addressed by this software itself.
@@ -81,8 +81,8 @@ docker run --name estimationgame -p 80:80 estimationgame
 ## Notes
 
 Working with websockets makes things tough. Did not manage to make 
-them work with uwsgi. Gunicorn (the current solution) can use
-only a single worker. Setting is done in [start.sh](start.sh)
+them work with uwsgi. Gunicorn (the current solution) can only use
+a single worker. Setting is done in [start.sh](start.sh)
 
 - https://flask-socketio.readthedocs.io/en/latest/#gunicorn-web-server
 - https://github.com/miguelgrinberg/Flask-SocketIO/issues/402
