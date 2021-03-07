@@ -22,6 +22,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: '12.x'
+      - run: npm ci
+        working-directory: ./client
       - run: make release      
       - name: release
         uses: actions/create-release@v1
