@@ -20,7 +20,7 @@ def create_app():
     db.init_app(app)
     app.config['SECRET_KEY'] = 'would become a secret in production...'
     _socketio = SocketIO(app, logger=True, engineio_logger=True, cors_allowed_origins="*",
-                         path="/api-ws/socket.io",
+                         path="/estimo/api-ws/socket.io",
                          ping_timeout=20, manage_session=True)
     CORS(app, resources={r'/*': {'origins': '*'}})
     app.url_map.strict_slashes = False

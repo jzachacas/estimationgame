@@ -1,6 +1,6 @@
 module.exports = {
 
-  publicPath: '/',
+  publicPath: '/estimo',
 
   devServer: {
     overlay: {
@@ -9,7 +9,7 @@ module.exports = {
     },
     // 'public' corresponds to 'Network' entry in console output
     public: 'localhost:8080/',
-    publicPath: '/',
+    publicPath: '/estimo',
     proxy: {
       '/api/': {'target': 'http://localhost:5000'} ,
       '/api-ws/': {'target': 'http://localhost:5000'} ,

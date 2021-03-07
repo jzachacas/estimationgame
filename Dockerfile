@@ -15,7 +15,7 @@ COPY ./backend/*.py /srv/backend/
 COPY swagger.yaml /srv/
 RUN python setup.py
 
-COPY client/dist /var/www/html
+COPY client/dist /var/www/html/estimo
 COPY nginx.conf /etc/nginx
 COPY start.sh /srv/backend
 
@@ -23,6 +23,10 @@ RUN install -d /var/log/gunicorn
 
 WORKDIR /srv/backend
 
+# SERVICE_TAGS is needed for cloudogu
+ENV SERVICE_TAGS webapp
+# Exposing the port is also necessary when run as dogu
+EXPOSE 8080
 
 RUN chmod +x ./start.sh
 CMD ["./start.sh"]

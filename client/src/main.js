@@ -8,10 +8,9 @@ import App from './App.vue';
 import router from './router';
 import 'bootstrap/dist/css/bootstrap.css';
 
-if (localStorage.username === undefined && !window.location.href.endsWith('/login')) {
-  window.location.replace('/login');
+if (localStorage.username === undefined) {
+  router.push({ name: 'Login' });
 }
-
 Vue.use(BootstrapVue);
 
 const socket = socketio(WS_LOCATION, { path: WS_PATH });
