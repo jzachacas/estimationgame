@@ -17,3 +17,4 @@ __pycache__
 /backend/venv/
 /backend/database.sqlite
 /client/cypress/videos/
+/estimo.tar.gz
