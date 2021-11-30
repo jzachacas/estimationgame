@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
-import Index from '../components/Index.vue';
-import Login from '../components/Login.vue';
-import Logout from '../components/Logout.vue';
+import EstimoIndex from '../components/EstimoIndex.vue';
+import EstimoLogin from '../components/EstimoLogin.vue';
+import EstimoLogout from '../components/EstimoLogout.vue';
 
 Vue.use(Router);
 
@@ -13,17 +13,17 @@ export default new Router({
     {
       path: '/',
       name: 'Index',
-      component: Index,
+      component: EstimoIndex,
     },
     {
       path: '/login',
       name: 'Login',
-      component: Login,
+      component: EstimoLogin,
     },
     {
       path: '/logout',
       name: 'Logout',
-      component: Logout,
+      component: EstimoLogout,
     },
   ],
 });

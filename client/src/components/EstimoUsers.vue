@@ -40,7 +40,7 @@
 import axios from 'axios';
 import { API_LOCATION } from '@/config';
 
-import Alert from '@/components/Alert.vue';
+import EstimoAlert from '@/components/EstimoAlert.vue';
 
 export default {
   data() {
@@ -51,7 +51,7 @@ export default {
     };
   },
   components: {
-    alert: Alert,
+    alert: EstimoAlert,
   },
   sockets: {
     ping() {

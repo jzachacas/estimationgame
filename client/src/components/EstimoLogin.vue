@@ -22,7 +22,7 @@ import axios from 'axios';
 import { API_LOCATION } from '@/config';
 
 export default {
-  name: 'Login',
+  name: 'EstimoLogin',
   data() {
     return {
       username: localStorage.lastUsername,

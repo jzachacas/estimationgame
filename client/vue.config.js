@@ -11,8 +11,8 @@ module.exports = {
     public: 'localhost:8080/',
     publicPath: '/estimo',
     proxy: {
-      '/api/': {'target': 'http://localhost:5000'} ,
-      '/api-ws/': {'target': 'http://localhost:5000'} ,
+      '/api/': { target: 'http://localhost:5000' },
+      '/api-ws/': { target: 'http://localhost:5000' },
     },
     disableHostCheck: true,
   },

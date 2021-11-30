@@ -3,9 +3,9 @@
     <div class="row">
       <div class="col-sm-10">
         <h1>Q&D Estimation Game</h1>
-        <Story/>
-        <Users/>
-        <VoteOptions/>
+        <EstimoStory/>
+        <EstimoUsers/>
+        <EstimoVoteOptions/>
         <hr>
         Voting as {{ getUserName() }}
         <button type="button" class="btn" @click="doLogout()">Logout</button>
@@ -16,16 +16,16 @@
 
 <script>
 
-import Users from './Users.vue';
-import Story from './Story.vue';
-import VoteOptions from './VoteOptions.vue';
+import EstimoUsers from './EstimoUsers.vue';
+import EstimoStory from './EstimoStory.vue';
+import EstimoVoteOptions from './EstimoVoteOptions.vue';
 
 export default {
   name: 'App',
   components: {
-    Story,
-    Users,
-    VoteOptions,
+    EstimoStory,
+    EstimoUsers,
+    EstimoVoteOptions,
   },
   beforeCreate() {
   },
