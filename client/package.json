@@ -10,12 +10,12 @@
     "cypress-i": "npx cypress open"
   },
   "dependencies": {
-    "axios": "^0.21.4",
-    "bootstrap": "^4.6.1",
+    "axios": "^0.26.0",
+    "bootstrap": "^5.1.3",
     "bootstrap-vue": "^2.21.2",
-    "core-js": "^3.19.2",
+    "core-js": "^3.21.1",
     "dredd": "^14.1.0",
-    "socket.io-client": "^3.1.3",
+    "socket.io-client": "^4.4.1",
     "vue": "^2.6.14",
     "vue-router": "^3.5.3",
     "vue-socket.io": "^3.0.10"
