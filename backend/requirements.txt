@@ -10,7 +10,7 @@ netifaces==0.11.0
 python-engineio==4.3.0
 python-socketio==5.5.0
 six==1.16.0
-Werkzeug==2.0.2
+Werkzeug==2.2.3
 connexion==2.9.0
 eventlet==0.33.0
 greenlet==1.1.2
